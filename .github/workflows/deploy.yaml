@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  repository_dispach:
+  repository_dispatch:
     branches:
       - main
 
