@@ -20,7 +20,8 @@ export default {
       hello: "world",
       serverDate,
       dbDate,
-      faunaDate: res.data.isoString
+      faunaDate: res.data.isoString,
+      serverDate2: new Date().toISOString(),
     };
 
     const json = JSON.stringify(data, null, 2);
