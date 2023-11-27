@@ -8,7 +8,8 @@ export default {
     await pgClient.connect();
 
     const res = await pgClient.query('SELECT CURRENT_TIMESTAMP AS db_date');
-    const dbDate = res.row[0].db_date;
+    const dbDate = res.rows[0].db_date;
+    pgClient.end();
 
     const data = {
       hello: "world",
