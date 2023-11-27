@@ -13,7 +13,7 @@ export default {
     const dbDate = res.rows[0].db_date;
     pgClient.end();
 
-    let faunaClient = new Client({secret: FAUNA_SECRET});
+    let faunaClient = new Client({secret: env.FAUNA_SECRET});
     res = await faunaClient.query(fql`Time.now()`);
 
     const data = {
