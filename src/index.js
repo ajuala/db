@@ -3,7 +3,7 @@ import pg from 'pg';
 
 export default {
   async fetch(req, env) {
-    serverDate = new Date().toISOString();
+    const serverDate = new Date().toISOString();
 
     const pgClient = new pg.Client({connectionString: env.COCKROACH_CONN_STRING});
     await pgClient.connect();
