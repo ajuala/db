@@ -1,5 +1,11 @@
+import pg from 'pg';
+
+
 export default {
   async fetch(req, env) {
+
+    const pgclient = new pg.Client({connectionString: env.COCKROACH_CONN_STRING});
+
     const data = {
       hello: "world",
     };
