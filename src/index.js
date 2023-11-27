@@ -7,7 +7,7 @@ export default {
     const pgClient = new pg.Client({connectionString: env.COCKROACH_CONN_STRING});
     await pgClient.connect();
 
-    const res = await pgClient.queru('SELECT CURRENT_TIMESTAMP AS db_date');
+    const res = await pgClient.query('SELECT CURRENT_TIMESTAMP AS db_date');
     const dbDate = res.row[0].db_date;
 
     const data = {
