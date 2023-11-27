@@ -1,4 +1,5 @@
 import pg from 'pg';
+import {Client, fql} from 'fauna';
 
 
 export default {
@@ -12,10 +13,14 @@ export default {
     const dbDate = res.rows[0].db_date;
     pgClient.end();
 
+    let faunaClient = new Client({secret: FAUNA_SECRET});
+    res = await faunaClient.query(fql`Time.now()`);
+
     const data = {
       hello: "world",
+      serverDate,
       dbDate,
-      serverDate
+      faunaDate: res.data.isoString
     };
 
     const json = JSON.stringify(data, null, 2);
