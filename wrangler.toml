@@ -2,3 +2,12 @@ name = "db"
 main = "./src/index.js"
 compatibility_date = "2022-10-10"
 node_compat = true
+
+
+d1_databases = [
+  { binding = "DB", name = "nstudio", database_id = "1ed3ab88-a7eb-4459-87c4-c5565d51e1bd" }
+]
+
+kv_namespaces = [
+  { binding = "SESSIONS", id = "57f0b5a597fb4579894e0290e0bfcc46" }
+]
