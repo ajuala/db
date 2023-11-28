@@ -15,14 +15,14 @@ export default {
 
     let faunaClient = new Client({secret: env.FAUNA_SECRET});
     res = await faunaClient.query(fql`Time.now()`);
-    let D1Time = (await env.DB.prepare('SELECT current_timestamp ctime').first()).ctime;
+    // let D1Time = (await env.DB.prepare('SELECT current_timestamp ctime').first()).ctime;
 
     const data = {
       hello: "world",
       serverDate,
       dbDate,
       faunaDate: res.data.isoString,
-      D1Time,
+      // D1Time,
       serverDate2: new Date().toISOString(),
     };
 
